@@ -41,6 +41,7 @@ Partial Class FormKujundid
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnRomb = New System.Windows.Forms.Button()
         Me.btnRoopkylik = New System.Windows.Forms.Button()
+        Me.LabelError = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtKylgA
@@ -104,6 +105,7 @@ Partial Class FormKujundid
         '
         'txtYmbermoot
         '
+        Me.txtYmbermoot.Enabled = False
         Me.txtYmbermoot.Location = New System.Drawing.Point(168, 243)
         Me.txtYmbermoot.Name = "txtYmbermoot"
         Me.txtYmbermoot.ReadOnly = True
@@ -113,6 +115,7 @@ Partial Class FormKujundid
         'txtPindala
         '
         Me.txtPindala.BackColor = System.Drawing.SystemColors.Control
+        Me.txtPindala.Enabled = False
         Me.txtPindala.Location = New System.Drawing.Point(168, 292)
         Me.txtPindala.Name = "txtPindala"
         Me.txtPindala.ReadOnly = True
@@ -157,6 +160,7 @@ Partial Class FormKujundid
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.ComboBox1.Location = New System.Drawing.Point(128, 131)
@@ -175,7 +179,7 @@ Partial Class FormKujundid
         '
         'TxtKorgus
         '
-        Me.TxtKorgus.Location = New System.Drawing.Point(314, 39)
+        Me.TxtKorgus.Location = New System.Drawing.Point(365, 39)
         Me.TxtKorgus.Name = "TxtKorgus"
         Me.TxtKorgus.Size = New System.Drawing.Size(100, 26)
         Me.TxtKorgus.TabIndex = 15
@@ -183,7 +187,7 @@ Partial Class FormKujundid
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(270, 42)
+        Me.Label8.Location = New System.Drawing.Point(315, 42)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(27, 20)
         Me.Label8.TabIndex = 17
@@ -207,11 +211,20 @@ Partial Class FormKujundid
         Me.btnRoopkylik.Text = "Rööpkülik"
         Me.btnRoopkylik.UseVisualStyleBackColor = True
         '
+        'LabelError
+        '
+        Me.LabelError.AutoSize = True
+        Me.LabelError.Location = New System.Drawing.Point(284, 82)
+        Me.LabelError.Name = "LabelError"
+        Me.LabelError.Size = New System.Drawing.Size(0, 20)
+        Me.LabelError.TabIndex = 20
+        '
         'FormKujundid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.LabelError)
         Me.Controls.Add(Me.btnRoopkylik)
         Me.Controls.Add(Me.btnRomb)
         Me.Controls.Add(Me.Label8)
@@ -257,4 +270,5 @@ Partial Class FormKujundid
     Friend WithEvents Label8 As Label
     Friend WithEvents btnRomb As Button
     Friend WithEvents btnRoopkylik As Button
+    Friend WithEvents LabelError As Label
 End Class

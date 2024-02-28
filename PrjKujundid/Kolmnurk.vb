@@ -10,6 +10,9 @@ Public Class Kolmnurk
         MyBase.New("Võrdhaarne kolmnurk", alus, haar, haar)
 
         'height
+        If haar  Then
+
+        End If
         Me.korgus = Sqrt(haar * haar - (alus * alus) / 4)
 
     End Sub
@@ -18,6 +21,6 @@ Public Class Kolmnurk
     End Function
 
     Public Overrides Function LeiaPindala() As Double
-        Return kylgA * korgus / 2
+        Return (kylgA * korgus) / 2
     End Function
 End Class

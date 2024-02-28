@@ -10,19 +10,35 @@
     End Sub
 
     Private Sub btnKolmnurk_Click(sender As Object, e As EventArgs) Handles btnKolmnurk.Click
-
-        Dim objektKolmnurk As New Kolmnurk(txtKylgA.Text, txtKylgB.Text, TxtKorgus.Text)
-        tootleKujund(objektKolmnurk, precision)
+        If (Not Char.IsDigit(txtKylgA.Text) Or Not Char.IsDigit(txtKylgB.Text)) Then
+            LabelError.Text = "Insert all the values"
+        ElseIf (txtKylgB.Text + txtKylgB.Text) < txtKylgA.Text Then
+            LabelError.Text = "alus peab olema suurem kui 2x haar"
+        Else
+            LabelError.Text = ""
+            Dim objektKolmnurk As New Kolmnurk(txtKylgA.Text, txtKylgB.Text)
+            tootleKujund(objektKolmnurk, precision)
+        End If
     End Sub
 
     Private Sub btnRuut_Click(sender As Object, e As EventArgs) Handles btnRuut.Click
-        Dim objektRuut As New Ruut(txtKylgA.Text)
+        If Not Char.IsDigit(txtKylgA.Text) Then
+            LabelError.Text = "Insert all the values"
+        Else
+            LabelError.Text = ""
+            Dim objektRuut As New Ruut(txtKylgA.Text)
 
-        tootleKujund(objektRuut, precision)
+            tootleKujund(objektRuut, precision)
+        End If
     End Sub
 
     Private Sub btnRistkylik_Click(sender As Object, e As EventArgs) Handles btnRistkylik.Click
-        tootleKujund(New Ristkylik(txtKylgA.Text, txtKylgB.Text), precision)
+        If Not Char.IsDigit(txtKylgA.Text) Or Not Char.IsDigit(txtKylgB.Text) Then
+            LabelError.Text = "Insert all the values"
+        Else
+            LabelError.Text = ""
+            tootleKujund(New Ristkylik(txtKylgA.Text, txtKylgB.Text), precision)
+        End If
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -41,14 +57,28 @@
     End Sub
 
     Private Sub btnRomb_Click(sender As Object, e As EventArgs) Handles btnRomb.Click
-        Dim objektRomb As New CRomb(txtKylgA.Text, TxtKorgus.Text)
+        If Not Char.IsDigit(txtKylgA.Text) Or Not Char.IsDigit(txtKylgB.Text) Or Not Char.IsDigit(TxtKorgus.Text) Then
+            LabelError.Text = "Insert all the values"
+        Else
+            LabelError.Text = ""
+            Dim objektRomb As New CRomb(txtKylgA.Text, TxtKorgus.Text)
 
-        tootleKujund(objektRomb, precision)
+            tootleKujund(objektRomb, precision)
+        End If
     End Sub
 
     Private Sub btnRoopkylik_Click(sender As Object, e As EventArgs) Handles btnRoopkylik.Click
-        Dim objektRoopkylik As New Roopkylik(txtKylgA.Text, txtKylgB.Text, TxtKorgus.Text)
+        If Not Char.IsDigit(txtKylgA.Text) And Char.IsDigit(txtKylgB.Text) Or Not Char.IsDigit(TxtKorgus.Text) Then
+            LabelError.Text = "Insert all the values"
+        Else
+            LabelError.Text = ""
+            Dim objektRoopkylik As New Roopkylik(txtKylgA.Text, txtKylgB.Text, TxtKorgus.Text)
 
-        tootleKujund(objektRoopkylik, precision)
+            tootleKujund(objektRoopkylik, precision)
+        End If
+    End Sub
+
+    Private Sub FormKujundid_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ComboBox1.SelectedIndex = 0
     End Sub
 End Class
