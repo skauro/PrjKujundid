@@ -37,6 +37,10 @@ Partial Class FormKujundid
         Me.lblTyyp = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtKorgus = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnRomb = New System.Windows.Forms.Button()
+        Me.btnRoopkylik = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtKylgA
@@ -169,11 +173,49 @@ Partial Class FormKujundid
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "täpsus : "
         '
+        'TxtKorgus
+        '
+        Me.TxtKorgus.Location = New System.Drawing.Point(314, 39)
+        Me.TxtKorgus.Name = "TxtKorgus"
+        Me.TxtKorgus.Size = New System.Drawing.Size(100, 26)
+        Me.TxtKorgus.TabIndex = 15
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(270, 42)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(27, 20)
+        Me.Label8.TabIndex = 17
+        Me.Label8.Text = "h="
+        '
+        'btnRomb
+        '
+        Me.btnRomb.Location = New System.Drawing.Point(642, 202)
+        Me.btnRomb.Name = "btnRomb"
+        Me.btnRomb.Size = New System.Drawing.Size(101, 32)
+        Me.btnRomb.TabIndex = 18
+        Me.btnRomb.Text = "Romb"
+        Me.btnRomb.UseVisualStyleBackColor = True
+        '
+        'btnRoopkylik
+        '
+        Me.btnRoopkylik.Location = New System.Drawing.Point(642, 249)
+        Me.btnRoopkylik.Name = "btnRoopkylik"
+        Me.btnRoopkylik.Size = New System.Drawing.Size(101, 30)
+        Me.btnRoopkylik.TabIndex = 19
+        Me.btnRoopkylik.Text = "Rööpkülik"
+        Me.btnRoopkylik.UseVisualStyleBackColor = True
+        '
         'FormKujundid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnRoopkylik)
+        Me.Controls.Add(Me.btnRomb)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.TxtKorgus)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lblTyyp)
@@ -211,4 +253,8 @@ Partial Class FormKujundid
     Friend WithEvents lblTyyp As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents TxtKorgus As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnRomb As Button
+    Friend WithEvents btnRoopkylik As Button
 End Class
